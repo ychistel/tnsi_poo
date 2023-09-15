@@ -1,0 +1,579 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="fr" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Projet POO &#8212; NSI</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/translations.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'poo/content/tp_domino';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Recherche" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="fr"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Passer au contenu principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">NSI</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Téléchargez cette page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/poo/content/tp_domino.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Télécharger le fichier source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimer au format PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Mode plein écran"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="clair/sombre" aria-label="clair/sombre" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Projet POO</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenu </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectif">Objectif</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-classe-domino">La classe Domino</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-classe-jeudomino">La classe JeuDomino</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-classe-joueur">La classe Joueur</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-classe-tapis">La classe Tapis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#le-programme-principal">Le programme principal</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="toctree-wrapper compound">
+</div>
+<section id="projet-poo">
+<h1>Projet POO<a class="headerlink" href="#projet-poo" title="Lien permanent vers cette rubrique">#</a></h1>
+<section id="objectif">
+<h2>Objectif<a class="headerlink" href="#objectif" title="Lien permanent vers cette rubrique">#</a></h2>
+<a class="reference internal image-reference" href="../../_images/jeu_dominos.jpg"><img alt="../../_images/jeu_dominos.jpg" class="align-center" src="../../_images/jeu_dominos.jpg" style="width: 480px;" /></a>
+<p>Le jeu de dominos est constitué de 28 pièces. Une pièce de domino est en deux parties. Chaque partie contient de 0 à 6 points. Lorsque les deux parties ont le même nombre de points, les dominos sont doubles. Il y a 7 doubles dans un jeu : du double 0 au double 6.</p>
+<p>Le jeu se joue de 2 à 4 joueurs.</p>
+<ul class="simple">
+<li><p>S’il y a 2 ou 3 joueurs, chaque joueur pioche 7 dominos. Il reste 14 ou 7 dominos dans la pioche.</p></li>
+<li><p>S’il y a 4 joueurs, chaque joueur pioche 6 dominos. Il reste 4 dominos dans la pioche.</p></li>
+</ul>
+<p>Au début de la partie, le joueur qui a le domino le plus fort commence à jouer en posant un domino sur le tapis. Ensuite, les autres joueurs posent chacun leur tour un domino en les faisant coincider. Si un joueur ne pas jouer, il pioche ou passe son tour si la pioche est vide.</p>
+<p>On va représenter ce jeu de dominos en POO. Voici la liste des classes que l’on va utiliser:</p>
+<ol class="arabic simple">
+<li><p>La classe <code class="docutils literal notranslate"><span class="pre">Domino</span></code> qui construit un objet domino.</p></li>
+<li><p>La classe <code class="docutils literal notranslate"><span class="pre">JeuDomino</span></code> qui construit un objet contenant les 28 dominos.</p></li>
+<li><p>La classe <code class="docutils literal notranslate"><span class="pre">Tapis</span></code> qui contient les dominos posés par les joueurs.</p></li>
+<li><p>La classe <code class="docutils literal notranslate"><span class="pre">Joueur</span></code>.</p></li>
+</ol>
+</section>
+<section id="la-classe-domino">
+<h2>La classe Domino<a class="headerlink" href="#la-classe-domino" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>La classe Domino a un seul attribut <code class="docutils literal notranslate"><span class="pre">valeur</span></code> et 5 méthodes.</p>
+<a class="reference internal image-reference" href="../../_images/classe_Domino.svg"><img alt="../../_images/classe_Domino.svg" class="align-center" src="../../_images/classe_Domino.svg" width="240px" /></a>
+<p>L’attribut <code class="docutils literal notranslate"><span class="pre">valeur</span></code> est une liste contenant le nombre de points de chaque partie d’un domino.</p>
+<p>Les méthodes de cette classe sont:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">__init__</span></code> constructeur qui initialise l’attribut <code class="docutils literal notranslate"><span class="pre">valeur</span></code> avec une liste dont les valeurs sont passées en paramètres.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">retourner</span></code> qui retourne le domino et donc modifie l’attribut <code class="docutils literal notranslate"><span class="pre">valeur</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">somme_points</span></code> qui renvoie la somme des points du domino.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">difference_points</span></code> qui renvoie la différence positive des points du domino.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__repr__</span></code> qui affiche le domino. Par exemple <code class="docutils literal notranslate"><span class="pre">[a|b]</span></code></p></li>
+</ol>
+<p>On donne ci-dessous le code de la classe à compléter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Domino</span><span class="p">:</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">valeur</span> <span class="o">=</span> <span class="o">...</span>
+        
+    <span class="k">def</span> <span class="nf">retourner</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+        
+    <span class="k">def</span> <span class="nf">somme_points</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+    
+    <span class="k">def</span> <span class="nf">difference_points</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+    
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+</pre></div>
+</div>
+</section>
+<section id="la-classe-jeudomino">
+<h2>La classe JeuDomino<a class="headerlink" href="#la-classe-jeudomino" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>La classe JeuDomino a un seul attribut <code class="docutils literal notranslate"><span class="pre">valeur</span></code> et 2 méthodes.</p>
+<a class="reference internal image-reference" href="../../_images/classe_JeuDomino.svg"><img alt="../../_images/classe_JeuDomino.svg" class="align-center" src="../../_images/classe_JeuDomino.svg" width="240px" /></a>
+<p>L’attribut <code class="docutils literal notranslate"><span class="pre">valeur</span></code> est une liste contenant les 28 dominos du jeu. Chaque domino est un objet <code class="docutils literal notranslate"><span class="pre">Domino</span></code>.</p>
+<p>Les méthodes de cette classe sont:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">__init__</span></code> constructeur qui initialise l’attribut <code class="docutils literal notranslate"><span class="pre">dominos</span></code> avec une liste dont les valeurs sont les 28 dominos du jeu.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">jouable</span></code> qui retourne un booléen pour savoir si la partie est jouable. Cela signifie :</p>
+<ul class="simple">
+<li><p>La partie est encore jouable si la pioche est non vide, les joueurs ont encore des dominos et qu’ils peuvent en poser au tapis.</p></li>
+<li><p>La partie n’est plus jouable, donc finie, si la pioche est vide, un joueur a posé tous ses dominos ou aucun joueur ne peut poser de dominos.</p></li>
+</ul>
+</li>
+</ol>
+<p>On donne ci-dessous le code de la classe à compléter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">JeuDomino</span><span class="p">:</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dominos</span> <span class="o">=</span> <span class="o">...</span>
+        
+    <span class="k">def</span> <span class="nf">jouable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">tapis</span><span class="p">,</span><span class="n">joueurs</span><span class="p">):</span>
+        <span class="k">pass</span>
+                    
+</pre></div>
+</div>
+</section>
+<section id="la-classe-joueur">
+<h2>La classe Joueur<a class="headerlink" href="#la-classe-joueur" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>La classe Joueur a 4 attributs et 7 méthodes.</p>
+<a class="reference internal image-reference" href="../../_images/classe_Joueur.svg"><img alt="../../_images/classe_Joueur.svg" class="align-center" src="../../_images/classe_Joueur.svg" width="240px" /></a>
+<ul class="simple">
+<li><p>L’attribut <code class="docutils literal notranslate"><span class="pre">nom</span></code> contient le nom du joueur</p></li>
+<li><p>L’attribut <code class="docutils literal notranslate"><span class="pre">dominos</span></code> est une liste qui contient les dominos du joueur</p></li>
+<li><p>L’attribut <code class="docutils literal notranslate"><span class="pre">dominos_jouables</span></code> est une liste qui contient les dominos que le joueur peut poser sur le tapis.</p></li>
+<li><p>L’attribut <code class="docutils literal notranslate"><span class="pre">somme_points</span></code> est un nombre entier égal à la somme des points des dominos du joueur.</p></li>
+</ul>
+<p>Les méthodes de cette classe sont:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">__init__</span></code> constructeur qui initialise les attributs.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">est_vide</span></code> qui retourne un booléen pour savoir si le joueur a encore des dominos dans son jeu.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">calculer_points</span></code> modifie l’attribut <code class="docutils literal notranslate"><span class="pre">somme_points</span></code> et retourne la somme des points des dominos du joueur.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">piocher</span></code> ajoute un domino au joueur. La pioche est l’attribut <code class="docutils literal notranslate"><span class="pre">dominos</span></code> de la classe <code class="docutils literal notranslate"><span class="pre">JeuDomino</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">poser</span></code> ajoute au tapis un domino du joueur en faisant correspondre les points des dominos accolés.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">jouable</span></code> modifie l’attribut <code class="docutils literal notranslate"><span class="pre">dominos_jouables</span></code> et retourne la liste des dominos du joueur suceptibles d’être posés au tapis.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">domino_fort</span></code> retourne le domino qui a la plus grande valeur parmi une liste de dominos. La plus forte valeur d’un domino peut être déterminée par la plus grande somme des points d’un domino et en même temps la plus petite différence entre les points.</p></li>
+</ol>
+<p>On donne ci-dessous le code de la classe à compléter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Joueur</span><span class="p">:</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">nom</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nom</span> <span class="o">=</span> <span class="o">...</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dominos</span> <span class="o">=</span> <span class="o">...</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dominos_jouables</span> <span class="o">=</span> <span class="o">...</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">somme_points</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="k">def</span> <span class="nf">est_vide</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+        
+    <span class="k">def</span> <span class="nf">calculer_points</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+    
+    <span class="k">def</span> <span class="nf">piocher</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">jeu</span><span class="p">):</span>
+        <span class="k">pass</span>
+    
+    <span class="k">def</span> <span class="nf">poser</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">tapis</span><span class="p">,</span><span class="n">domino</span><span class="p">):</span>
+        <span class="k">pass</span>
+    
+    <span class="k">def</span> <span class="nf">jouable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">tapis</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">domino_fort</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">dominos</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+</pre></div>
+</div>
+</section>
+<section id="la-classe-tapis">
+<h2>La classe Tapis<a class="headerlink" href="#la-classe-tapis" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>La classe Joueur a 1 attribut <code class="docutils literal notranslate"><span class="pre">dominos</span></code> et 6 méthodes.</p>
+<a class="reference internal image-reference" href="../../_images/classe_Tapis.svg"><img alt="../../_images/classe_Tapis.svg" class="align-center" src="../../_images/classe_Tapis.svg" width="240px" /></a>
+<p>L’attribut <code class="docutils literal notranslate"><span class="pre">dominos</span></code> contient les dominos posés par les joueurs.</p>
+<p>Les méthodes de cette classe sont:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">__init__</span></code> constructeur qui initialise l’attribut <code class="docutils literal notranslate"><span class="pre">dominos</span></code> par une liste vide.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">est_vide</span></code> qui retourne un booléen pour savoir si le tapis est vide ou non.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a_gauche</span></code> qui retourne le domino situé à gauche du tapis.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a_droite</span></code> qui retourne le domino situé à droite du tapis.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">inserer_gauche</span></code> qui ajoute un domino à gauche sur le tapis.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">inserer_droite</span></code> qui ajoute un domino à droite au tapis.</p></li>
+</ol>
+<p>On donne ci-dessous le code de la classe à compléter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Tapis</span><span class="p">:</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dominos</span> <span class="o">=</span> <span class="o">...</span>
+        
+    <span class="k">def</span> <span class="nf">est_vide</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+    
+    <span class="k">def</span> <span class="nf">a_gauche</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+        
+    <span class="k">def</span> <span class="nf">a_droite</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+        
+    <span class="k">def</span> <span class="nf">inserer_gauche</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">domino</span><span class="p">):</span>
+        <span class="k">pass</span>
+    
+    <span class="k">def</span> <span class="nf">inserer_droite</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">domino</span><span class="p">):</span>
+        <span class="k">pass</span>
+                    
+</pre></div>
+</div>
+</section>
+<section id="le-programme-principal">
+<h2>Le programme principal<a class="headerlink" href="#le-programme-principal" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>Le programme doit dérouler une partie de dominos entre des joueurs jusqu’à avoir un gagnant.</p>
+<p>Voici quelques remarques sur ce programme:</p>
+<ul class="simple">
+<li><p>Créer des joueurs. On peut se limiter à 2 joueurs (au moins au début)</p></li>
+<li><p>Créer un jeu de dominos (partie)</p></li>
+<li><p>Créer un tapis pour le jeu</p></li>
+</ul>
+<p>Une boucle de jeu se déroule tant que la partie est jouable:</p>
+<ul class="simple">
+<li><p>Les joueurs posent leurs dominos chacun leur tour</p></li>
+<li><p>Si un joueur ne peut pas jouer, il pioche ou passe son tour si la pioche est vide</p></li>
+<li><p>Si un des joueurs n’a plus de dominos, la partie s’arête</p></li>
+<li><p>Si les joueurs ne peuvent plus poser de dominos ni piocher, la partie s’arête</p></li>
+</ul>
+<p>A la fin de la partie, on affiche le gagnant. Si les joueurs ont encore des dominos mais ne pauvent plus joueur ni piocher, le vainqueur est celui qui a le plus petit nombre de points avec ces dominos.</p>
+<p>Pendant le déroulement du jeu, on effectuera des affichages. Par exemple :</p>
+<ul class="simple">
+<li><p>Le nom du joueur qui joue</p></li>
+<li><p>Le tapis après qu’un ait joué</p></li>
+<li><p>Les dominos de chaque joueur</p></li>
+</ul>
+<p>Il est possible de proposer d’autre méthodes et d’autres attributs pour réaliser ce jeu mais il faudra être en mesure de justifier les choix et surtout les raisons de ces choix.</p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenu
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectif">Objectif</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-classe-domino">La classe Domino</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-classe-jeudomino">La classe JeuDomino</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-classe-joueur">La classe Joueur</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-classe-tapis">La classe Tapis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#le-programme-principal">Le programme principal</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Par yannick chistel
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022, yannick chistel.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

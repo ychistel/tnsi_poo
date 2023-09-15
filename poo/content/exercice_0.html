@@ -1,0 +1,537 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="fr" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Exercices de base &#8212; NSI</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/translations.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'poo/content/exercice_0';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Recherche" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="fr"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Passer au contenu principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">NSI</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Téléchargez cette page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/poo/content/exercice_0.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Télécharger le fichier source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimer au format PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Mode plein écran"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="clair/sombre" aria-label="clair/sombre" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Exercices de base</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenu </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-1">Exercice 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-2">Exercice 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-3">Exercice 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-4">Exercice 4</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="exercices-de-base">
+<h1>Exercices de base<a class="headerlink" href="#exercices-de-base" title="Lien permanent vers cette rubrique">#</a></h1>
+<section id="exercice-1">
+<h2>Exercice 1<a class="headerlink" href="#exercice-1" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>On définit un objet avec la classe <code class="docutils literal notranslate"><span class="pre">Fruit</span></code> en Python:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Fruit</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nom</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">prix</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">quantite</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">masse</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Quels sont les attributs et leurs types définis dans la classe <code class="docutils literal notranslate"><span class="pre">Fruit</span></code>?</p></li>
+<li><p>On instancie un premier objet <code class="docutils literal notranslate"><span class="pre">a_1</span> <span class="pre">=</span> <span class="pre">Fruit()</span></code>.</p>
+<ol class="loweralpha simple">
+<li><p>Quelles sont les valeurs des attributs de l’objet <code class="docutils literal notranslate"><span class="pre">a_1</span></code> ?</p></li>
+<li><p>Quelle est l’instruction Python qui affiche la masse de l’objet <code class="docutils literal notranslate"><span class="pre">a_1</span></code>?</p></li>
+</ol>
+</li>
+<li><p>L’objet <code class="docutils literal notranslate"><span class="pre">a_1</span></code> représente 1 kg de pommes au prix de 3,20 euros. Quelles instructions Python modifient l’objet <code class="docutils literal notranslate"><span class="pre">a_1</span></code> ?</p></li>
+<li><p>Modifier le code de la classe <code class="docutils literal notranslate"><span class="pre">Fruit</span></code> pour que l’instanciation <code class="docutils literal notranslate"><span class="pre">a_1</span> <span class="pre">=</span> <span class="pre">Fruit('pommes',masse=1,prix=3.20)</span></code> représente 1 kg de pommes à l’instanciation de l’objet.</p></li>
+</ol>
+</section>
+<section id="exercice-2">
+<h2>Exercice 2<a class="headerlink" href="#exercice-2" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>On donne la classe <code class="docutils literal notranslate"><span class="pre">Personne</span></code> écrite en langage Python:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Personne</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">h</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nom</span> <span class="o">=</span> <span class="n">n</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">a</span>
+        <span class="k">if</span> <span class="n">h</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">hobby</span> <span class="o">=</span> <span class="n">h</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">hobby</span> <span class="o">=</span> <span class="s1">&#39;aucun&#39;</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>On instancie un premier objet <code class="docutils literal notranslate"><span class="pre">p_1</span> <span class="pre">=</span> <span class="pre">Personne('Alice',9,'magie')</span></code>. Quelles sont les valeurs des attributs de l’objet <code class="docutils literal notranslate"><span class="pre">p_1</span></code> ?</p></li>
+<li><p>Quelle est l’instruction Python qui instancie la variable <code class="docutils literal notranslate"><span class="pre">p_2</span></code> représentant la personne nommée Bob, âgée de 7 ans et qui n’a pas de hobby ?</p></li>
+<li><p>L’instruction Python <code class="docutils literal notranslate"><span class="pre">p_3</span> <span class="pre">=</span> <span class="pre">Personne('Carlo','musique',75)</span></code> renvoie-t-elle une erreur ? Si non, est-elle correcte ? Justifier.</p></li>
+</ol>
+</section>
+<section id="exercice-3">
+<h2>Exercice 3<a class="headerlink" href="#exercice-3" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>On considère le tableau de données suivant:</p>
+<table class="table table-center">
+<colgroup>
+<col style="width: 17.6%" />
+<col style="width: 11.8%" />
+<col style="width: 23.5%" />
+<col style="width: 23.5%" />
+<col style="width: 23.5%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>nom</p></th>
+<th class="head"><p>age</p></th>
+<th class="head"><p>jeu</p></th>
+<th class="head"><p>sport</p></th>
+<th class="head"><p>instrument</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Alice</p></td>
+<td><p>9</p></td>
+<td><p>cartes</p></td>
+<td><p>course à pied</p></td>
+<td><p>piano</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bob</p></td>
+<td><p>7</p></td>
+<td><p>quilles</p></td>
+<td><p>natation</p></td>
+<td><p>pipo</p></td>
+</tr>
+<tr class="row-even"><td><p>Carlo</p></td>
+<td><p>75</p></td>
+<td><p>fléchettes</p></td>
+<td><p>kayak</p></td>
+<td><p>guitare</p></td>
+</tr>
+</tbody>
+</table>
+<p>On veut représenter ces données par des <strong>objets</strong> construits avec la classe <code class="docutils literal notranslate"><span class="pre">Identite</span></code>.</p>
+<ol class="arabic">
+<li><p>Quels sont les attributs à définir pour la classe <code class="docutils literal notranslate"><span class="pre">Identite</span></code> ?</p></li>
+<li><p>Écrire en Python, la classe <code class="docutils literal notranslate"><span class="pre">Identite</span></code> avec son constructeur définissant les attributs de nos objets.</p></li>
+<li><p>Instancier 3 objets avec les variables <code class="docutils literal notranslate"><span class="pre">p_1</span></code>, <code class="docutils literal notranslate"><span class="pre">p_2</span></code> et <code class="docutils literal notranslate"><span class="pre">p_3</span></code> représentant les données du tableau.</p></li>
+<li><p>La fonction <code class="docutils literal notranslate"><span class="pre">age_moyen</span></code> prend en paramètre une <strong>liste</strong> d’objets et renvoie l’âge moyen des différents objets. Écrire en Python cette fonction et calculer l’âge moyen de nos 3 objets.</p></li>
+<li><p>Ajouter une méthode <code class="docutils literal notranslate"><span class="pre">afficher</span></code> qui affiche pour chaque objet les différents attributs et leurs valeurs. Par exemple:</p>
+<p><strong>Alice</strong></p>
+<ul class="simple">
+<li><p>âge:9</p></li>
+<li><p>jeu:cartes</p></li>
+<li><p>sport:course</p></li>
+<li><p>instrument:piano</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="exercice-4">
+<h2>Exercice 4<a class="headerlink" href="#exercice-4" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>Un site de vente en ligne propose des articles de bricolage à la vente. Pour chaque article, celui-ci a:</p>
+<ul class="simple">
+<li><p>une référence sous forme de chaine alpha-numérique;</p></li>
+<li><p>une désignation sous forme de chaine de caractères;</p></li>
+<li><p>un prix sous forme de nombre</p></li>
+</ul>
+<p>On donne ci-dessous un exemple d’articles que l’on peut trouver sur le site:</p>
+<table class="table table-center">
+<colgroup>
+<col style="width: 16.7%" />
+<col style="width: 50.0%" />
+<col style="width: 33.3%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>ref</p></th>
+<th class="head"><p>désignation</p></th>
+<th class="head"><p>prix (€)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>P21</p></td>
+<td><p>perceuse</p></td>
+<td><p>99.50</p></td>
+</tr>
+<tr class="row-odd"><td><p>M07</p></td>
+<td><p>meuleuse</p></td>
+<td><p>45.00</p></td>
+</tr>
+<tr class="row-even"><td><p>V33</p></td>
+<td><p>visseuse sans fil</p></td>
+<td><p>69.90</p></td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic">
+<li><p>Écrire la classe Article et son constructeur permettant de créer des objets pour les outils de bricolage.</p></li>
+<li><p>Créer les trois objets du site présents dans le tableau ci-dessus.</p></li>
+<li><p>La méthode <code class="docutils literal notranslate"><span class="pre">modifier_prix</span></code> permet de modifier le prix d’un article en y appliquant un pourcentage d’augmentation ou de réduction. Cette méthode prend en argument un pourcentage sous forme de nombre entier à appliquer et renvoie le prix modifié de l’article.</p>
+<ol class="loweralpha simple">
+<li><p>Écrire en Python la méthode <code class="docutils literal notranslate"><span class="pre">modifier_prix</span></code>.</p></li>
+<li><p>Appliquer une réduction de 10% sur le premier article et une augmentation de 20% sur le second.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Un prix augmenté de t% est un prix multiplié par <span class="math notranslate nohighlight">\(1+\frac{t}{100}\)</span>.</p></li>
+<li><p>Un prix réduit de t% est un prix multiplié par <span class="math notranslate nohighlight">\(1-\frac{t}{100}\)</span>.</p></li>
+</ul>
+</div>
+</li>
+</ol>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenu
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-1">Exercice 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-2">Exercice 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-3">Exercice 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-4">Exercice 4</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Par yannick chistel
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022, yannick chistel.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

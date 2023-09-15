@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="77.50589mm"
+   height="156.08313mm"
+   viewBox="0 0 77.50589 156.08313"
+   version="1.1"
+   id="svg2355"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="classe_Joueur.svg">
+  <defs
+     id="defs2349">
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect1027"
+       effect="spiro" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="-15.840765"
+     inkscape:cy="300.87248"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1680"
+     inkscape:window-height="971"
+     inkscape:window-x="1911"
+     inkscape:window-y="16"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata2352">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-12.429168,-27.994354)">
+    <g
+       id="g3062">
+      <rect
+         ry="2.7691255"
+         y="28.122953"
+         x="12.557767"
+         height="155.82593"
+         width="77.248695"
+         id="rect3025"
+         style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#4d4d4d;stroke-width:0.25719801;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <g
+         id="g3023">
+        <rect
+           ry="3.2128091"
+           y="32.040852"
+           x="18.576458"
+           height="19.243404"
+           width="64.144684"
+           id="rect1019"
+           style="opacity:1;fill:#e9afaf;fill-opacity:1;stroke:#000000;stroke-width:0.31999999;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+        <text
+           transform="scale(0.9402952,1.0634958)"
+           id="text1023"
+           y="41.931408"
+           x="39.966087"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.82347584px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.82720095px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           xml:space="preserve"><tspan
+             style="stroke-width:0.82720095px"
+             y="41.931408"
+             x="39.966087"
+             id="tspan1021"
+             sodipodi:role="line">Joueur</tspan></text>
+        <rect
+           ry="0"
+           y="100.1224"
+           x="21.343819"
+           height="9.3711281"
+           width="59.761662"
+           id="rect1029"
+           style="opacity:1;fill:#e9afaf;fill-opacity:1;stroke:#000000;stroke-width:0.3230243;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+        <rect
+           style="opacity:1;fill:#e9afaf;fill-opacity:1;stroke:#000000;stroke-width:0.3230243;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect1031"
+           width="59.761662"
+           height="9.3711281"
+           x="21.343819"
+           y="54.7915"
+           ry="0" />
+        <rect
+           ry="0"
+           y="64.162628"
+           x="21.343819"
+           height="35.959778"
+           width="59.729321"
+           id="rect1033"
+           style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.44045994;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+        <text
+           transform="scale(0.92765859,1.0779828)"
+           id="text1037"
+           y="57.67609"
+           x="27.434082"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.49457645px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.60886651px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           xml:space="preserve"><tspan
+             style="stroke-width:0.60886651px"
+             y="57.67609"
+             x="27.434082"
+             id="tspan1035"
+             sodipodi:role="line">Attributs</tspan></text>
+        <text
+           transform="scale(0.96860067,1.0324172)"
+           id="text1041"
+           y="69.605545"
+           x="25.79929"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.76706409px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.54066223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           xml:space="preserve"><tspan
+             style="stroke-width:0.54066223px"
+             y="69.605545"
+             x="25.79929"
+             id="tspan1039"
+             sodipodi:role="line">nom</tspan></text>
+        <rect
+           ry="0"
+           y="109.57776"
+           x="21.438715"
+           height="69.794739"
+           width="59.539551"
+           id="rect1043"
+           style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.50355279;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.76706409px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.54066223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="26.379375"
+           y="114.0283"
+           id="text1047"
+           transform="scale(0.96860067,1.0324172)"><tspan
+             sodipodi:role="line"
+             id="tspan1045"
+             x="26.379375"
+             y="114.0283"
+             style="stroke-width:0.54066223px">__init__</tspan></text>
+        <text
+           transform="scale(0.96860067,1.0324172)"
+           id="text1051"
+           y="139.75272"
+           x="25.79929"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.76706409px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.54066223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           xml:space="preserve"><tspan
+             style="stroke-width:0.54066223px"
+             y="139.75272"
+             x="25.79929"
+             id="tspan1049"
+             sodipodi:role="line">piocher</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.49457645px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.60886651px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="26.847414"
+           y="100.42896"
+           id="text1055"
+           transform="scale(0.92765859,1.0779828)"><tspan
+             sodipodi:role="line"
+             id="tspan1053"
+             x="26.847414"
+             y="100.42896"
+             style="stroke-width:0.60886651px">Méthodes</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.76706409px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.54066223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="26.004854"
+           y="77.630737"
+           id="text1059"
+           transform="scale(0.96860067,1.0324172)"><tspan
+             sodipodi:role="line"
+             id="tspan1057"
+             x="26.004854"
+             y="77.630737"
+             style="stroke-width:0.54066223px">dominos</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.76706409px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.54066223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="25.79929"
+           y="147.7249"
+           id="text1063"
+           transform="scale(0.96860067,1.0324172)"><tspan
+             sodipodi:role="line"
+             id="tspan1061"
+             x="25.79929"
+             y="147.7249"
+             style="stroke-width:0.54066223px">poser</tspan></text>
+        <text
+           transform="scale(0.96860067,1.0324172)"
+           id="text1067"
+           y="165.3166"
+           x="26.004854"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.76706409px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.54066223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           xml:space="preserve"><tspan
+             style="stroke-width:0.54066223px"
+             y="165.3166"
+             x="26.004854"
+             id="tspan1065"
+             sodipodi:role="line">domino_fort</tspan></text>
+        <text
+           transform="scale(0.96860067,1.0324172)"
+           id="text2972"
+           y="85.135948"
+           x="26.004854"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.76706409px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.54066223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           xml:space="preserve"><tspan
+             style="stroke-width:0.54066223px"
+             y="85.135948"
+             x="26.004854"
+             id="tspan2970"
+             sodipodi:role="line">dominos_jouables</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.76706409px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.54066223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="26.004854"
+           y="93.373375"
+           id="text2976"
+           transform="scale(0.96860067,1.0324172)"><tspan
+             sodipodi:role="line"
+             id="tspan2974"
+             x="26.004854"
+             y="93.373375"
+             style="stroke-width:0.54066223px">somme_points</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.76706409px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.54066223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="25.79929"
+           y="122.57635"
+           id="text2980"
+           transform="scale(0.96860067,1.0324172)"><tspan
+             sodipodi:role="line"
+             id="tspan2978"
+             x="25.79929"
+             y="122.57635"
+             style="stroke-width:0.54066223px">est_vide</tspan></text>
+        <text
+           transform="scale(0.96860067,1.0324172)"
+           id="text2984"
+           y="131.1244"
+           x="25.79929"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.76706409px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.54066223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           xml:space="preserve"><tspan
+             style="stroke-width:0.54066223px"
+             y="131.1244"
+             x="25.79929"
+             id="tspan2982"
+             sodipodi:role="line">calculer_points</tspan></text>
+        <text
+           transform="scale(0.96860067,1.0324172)"
+           id="text2988"
+           y="156.8488"
+           x="25.79929"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.76706409px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.54066223px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           xml:space="preserve"><tspan
+             style="stroke-width:0.54066223px"
+             y="156.8488"
+             x="25.79929"
+             id="tspan2986"
+             sodipodi:role="line">jouable</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>
