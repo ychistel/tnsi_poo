@@ -1,0 +1,350 @@
+\documentclass[11pt,a4paper]{article}
+
+%\usepackage{style2017}
+\usepackage{hyperref}
+
+\usepackage[T1]{fontenc} 
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+\usepackage{url}
+\usepackage{etex}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{bbm}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage[official]{eurosym}
+%\usepackage{pifont}
+\usepackage[left=1cm, right=1cm, top=1.5cm, bottom=1.5cm]{geometry}
+\usepackage{exercise}
+\usepackage{graphics}
+\usepackage{array,multirow,makecell}
+\usepackage{verbatim}
+\usepackage[dvipsnames,table]{pstricks}
+\usepackage{pstricks-add,pst-plot,pst-text,pst-tree,pst-eps,pst-fill,pst-node,pst-math,pst-blur,pst-func}
+\usepackage{pgf,tikz}
+\usepackage{tipfr}
+\usepackage{thmbox}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage{pdfpages}
+\usepackage{colortbl}
+%\usepackage{sagetex}
+\usetikzlibrary{arrows,patterns}
+\input tabvar
+\usepackage{tkz-tab}
+\usepackage{listings}
+\usepackage[np]{numprint}
+%\usepackage{tabularx}
+\usepackage{fancybox,fancyhdr}
+\usepackage{thmtools}
+\usepackage{bclogo}
+\usepackage{lastpage}
+
+%------------------------------------- 
+%        		Abréviations personnelles
+%-------------------------------------
+\newcommand{\Cc}{\textbf{Conclusion : }}
+\newcommand{\DNS}{\textbf{Devoir Non Surveillé}}
+\newcommand{\DS}{\textbf{Devoir Surveillé}}
+\newcommand\fpsd{une fonction polynôme du second degré~}
+\newcommand{\N}{\mathbb{N} } % Raccourci pour l'ensemble des entiers naturels
+\newcommand{\R}{\mathbb{R}} % Raccourci pour l'ensemble des réels
+\newcommand{\Z}{\mathbb{Z}} % Raccourci pour l'ensemble des entiers relatifs
+%\newcommand{\N}{\mathbb{N}} % Raccourci pour l'ensemble des réels
+
+%----------------------------------------------------------------------------------------------- 
+% 							Commandes mathématiques
+%-----------------------------------------------------------------------------------------------
+\renewcommand{\vec}[1]{\overrightarrow{#1}}	% Raccourci pour vecteurs
+\newcommand{\inv}[1]{\dfrac{1}{#1}} % Raccourci pour l'inverse des réels
+\newcommand{\e}{\text{e}}
+\newcommand*{\E}{\ensuremath{\mathrm{e}}}
+\newcommand{\lnx}{\ln(x)}
+
+%----------------------------------------------------------------------------------------------- 
+% 							Commandes Tableaux
+%-----------------------------------------------------------------------------------------------
+\setcellgapes{3pt}
+\makegapedcells
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash }b{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash }b{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash }b{#1}}
+
+%----------------------------------------------------------------------------------------------- 
+% 							Commandes Listes
+%-----------------------------------------------------------------------------------------------
+% Redéfinition du premier niveau
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\textbf{\theenumi)}}
+% Redéfinition du deuxième niveau
+\renewcommand{\theenumii}{\alph{enumii}}
+\renewcommand{\labelenumii}{\textbf{\theenumii)}}
+
+%-----------------------------------------------------------------------------------------------
+%							 		Environnement - Macros
+%-----------------------------------------------------------------------------------------------
+\setlength{\columnsep}{20pt}
+\setlength{\columnseprule}{0.5pt}
+\renewcommand{\thesection}{\arabic{section}}
+%\renewcommand{\thesection}{\arabic{section}}
+%La numérotation des section repart à 0 lorsque l'on change de partie
+%\makeatletter\@addtoreset{section}{chapter}\makeatother
+\makeatletter\@addtoreset{subsection}{section}\makeatother
+%\renewcommand{\thechapter}{\arabic{chapter}}
+%\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+%Modifier la section dans son positionnement, sa forme, couleur,...
+%\makeatletter
+%\renewcommand\section{\@startsection {section}{1}{\z@}%
+%                                   {-1.5ex \@plus -0.5ex \@minus -.2ex}%
+ %                                  {1.8ex \@plus .2ex}%
+  %                                 {\raggedleft\normalfont\color{gray}\large\bfseries}}
+%\makeatother
+\newenvironment{maliste}%
+{ \begin{list}%
+	{$\bullet$}%
+	{\setlength{\labelwidth}{30pt}%
+	 \setlength{\leftmargin}{35pt}%
+	 \setlength{\itemsep}{\parsep}}}%
+{ \end{list} }
+
+\newenvironment{NSI}[2]
+{
+	\noindent
+	\setlength{\fboxsep}{0cm}\setlength{\fboxrule}{0pt}\framebox[19cm]{
+		\setlength{\fboxsep}{0.25cm}\setlength{\fboxrule}{1pt}
+		\Huge{\textbf{#1 :}}
+		\hspace{0.5cm}{\huge{#2}}\hfill
+	}
+	{\newline \rule[0cm]{\linewidth}{0.05em}}
+}
+
+\hypersetup{
+    colorlinks =false,
+    linkcolor=blue,
+   linkbordercolor = 1 0 0
+}
+\newcounter{numexo}
+\setcellgapes{1pt}
+\setlength{\parskip}{8pt}
+
+\begin{document}
+
+
+
+\begin{NSI}
+{TP}{Listes chainées en POO}
+\end{NSI}
+
+La liste chainée est composée de maillons. Chaque maillon de la liste contient une valeur et pointe sur le maillon suivant.
+La liste chainée pointe sur le premier maillon de la chaine de maillons.
+
+\section{Le maillon}
+
+On donne l'implémentation du maillon en programmation orientée objet.
+
+\begin{center}
+\includegraphics[scale=0.8]{../img/tp_poo_1.png}
+\end{center}
+
+La classe \textsf{Maillon} définit 2 attributs et 2 méthodes:
+
+\begin{itemize}
+
+\item Les attributs \textsf{valeur} et \textsf{suivant} sont initialisés à la construction ou à \textsf{None} en l'absence de valeur.
+
+\item Les méthodes pour construire l'objet et pour l'afficher.
+
+\end{itemize}
+
+
+\begin{enumerate}
+\item Les maillons ci-dessous sont reliés entre eux. Ils forment une chaine.
+
+\begin{center}
+\includegraphics[scale=0.8]{../img/maillon_chaine.png}
+\end{center}
+
+\begin{enumerate}
+\setlength{\itemsep}{6pt}
+\item Construire un maillon \textsf{m1} qui contient la valeur 3.
+\item Construire le maillon \textsf{m2} qui contient la valeur 5 et qui pointe sur le maillon \textsf{m1}.
+\item Construire le maillon \textsf{m3} qui contient la valeur 8 et pointe sur le maillon \textsf{m2}.
+\end{enumerate}
+
+\item Créer un nouveau maillon \textsf{m} contenant la valeur 1. Nous allons relier ce maillon à la chaine de maillons précédente.
+
+\begin{enumerate}
+\item Le maillon \textsf{m} est placé au début de la chaine.
+
+\begin{center}
+\includegraphics[scale=0.8]{../img/maillon_chaine_1.png}
+\end{center}
+
+Écrire les instructions pour réaliser cette opération et afficher la chaine.
+
+
+\item Le maillon \textsf{m} est placé à la fin de la chaine.
+
+\begin{center}
+\includegraphics[scale=0.8]{../img/maillon_chaine_2.png}
+\end{center}
+
+Écrire les instructions pour réaliser cette opération et afficher la chaine.
+\end{enumerate}
+
+
+\item Le maillon \textsf{m} est placé dans la chaine entre la première et la deuxième valeur.
+
+\begin{center}
+\includegraphics[scale=0.8]{../img/maillon_chaine_3.png}
+\end{center}
+\begin{itemize}
+\item Le maillon \textsf{m} pointe sur le second maillon de la chaine
+\item Le premier maillon \textsf{m3} pointe sur le maillon \textsf{m} et plus sur le maillon \textsf{m2}.
+%\item On supprime la liaison entre le premier et le deuxième maillon
+\end{itemize}
+\begin{enumerate}
+\item Écrire les instructions pour réaliser cette opération et afficher la chaine.
+\item Recommencer en plaçant le maillon \textsf{m} entre le deuxième et le troisième maillon de la chaine.
+\end{enumerate}
+
+\end{enumerate}
+
+
+\section{La liste chainée}
+
+Dans la partie précédente, nous avons vu qu'il est possible de lier des maillons sous forme de chaine. 
+
+On va créer un nouvel objet \textsf{Liste} qui a un attribut unique \textsf{maillon}. Cet attribut a pour valeur \textsf{None} si la liste est vide et un maillon si elle n'est pas vide.
+
+La liste contient plusieurs méthodes répondant à l'interface de liste chainée.
+
+\begin{itemize}
+\item Le constructeur qui crée une liste vide.
+\item La méthode \textsf{est\_vide} qui renvoie un booléen pour savoir si la liste est vide.
+\item La méthode \textsf{tete} qui renvoie la tête de la liste soit la première valeur.
+\item La méthode \textsf{queue} qui renvoie la queue de la liste, c'est à dire la liste sans la tête.
+\item La méthode \textsf{inserer} qui prend en paramètre un élément à insérer dans la liste et l'ajoute en tête de la liste.
+\end{itemize}\medskip
+
+On reprend le fichier contenant la classe \textsf{Maillon} et on crée la classe \textsf{Liste} juste en dessous.
+
+
+\begin{enumerate}
+\setlength{\itemsep}{6pt}
+\item Créer le constructeur de la classe \textsf{Liste} permettant de créer une liste chainée vide. 
+
+\item Ajouter la méthode \textsf{est\_vide} qui renvoie un booléen. Une liste est vide si l'attribut \textsf{maillon} vaut \textsf{None}.
+
+\item Ajouter la méthode \textsf{tete} qui renvoie la tête de la liste, c'est à dire la première valeur de la liste. 
+
+\item Ajouter la méthode \textbf{queue} qui renvoie une liste constituée des éléments de la liste chainée sans sa tête. Il est donc nécessaire de créer une nouvelle liste chainée \textsf{queue} et lui attribuer le bon maillon.
+
+\item La méthode \textbf{inserer} prend en paramètre un élément et l'insère dans la liste. Pour y parvenir, il faut créer un maillon et l'insérer en tête de la liste.
+
+On donne le code à compléter:
+
+\begin{center}
+\includegraphics[scale=0.8]{../img/poo_liste_inserer.png}
+\end{center}
+
+
+\end{enumerate}
+
+\section{Application}
+
+
+\begin{enumerate}
+
+\item Créer une liste vide nommée \textsf{maliste}. Vérifier que \textsf{maliste} est vide puis l'afficher avec print.
+
+\item Insérer dans la liste chainée \textsf{maliste} les voyelles \textsf{a, e, i, o, u} de notre alphabet. Afficher la liste.
+
+\item La fonction \textbf{longueur\_liste} prend en paramètre la liste et renvoie le nombre d'éléments qu'elle contient soit sa longueur. 
+L'algorithme suivant peut vous guider dans son écriture:
+
+\begin{center}
+\begin{tabular}{|L{10cm}|}\hline
+on crée la variable longueur à 0\\
+tant que le suivant de liste n'est pas vide: \\
+\hspace{1cm} la longueur augmente de 1\\
+\hspace{1cm} on passe au suivant\\
+on renvoie la longueur\\\hline
+\end{tabular}
+\end{center}
+
+Écrire le code de la fonction en python.
+
+\item La fonction \textbf{supprime\_tete} prend en paramètre la liste. Pour supprimer la tete, il suffit :
+\begin{itemize}
+\item de vérifier si la liste est non vide. Si oui, alors la  queue de liste devient la liste.
+\item on renvoie la liste
+\end{itemize}
+
+\end{enumerate}
+
+
+
+\newpage
+\section{Implémenter une pile et une file en POO}
+
+\subsection{Pile}
+On va créer une classe Pile pour implémenter une pile. On rappelle l'interface de la pile:
+\begin{itemize}
+\item crée\_pile() qui crée une pile vide;
+\item empile(valeur,pile) qui ajoute une valeur au sommet de la pile;
+\item dépile(valeur,pile) qui supprime le sommet de la pile en renvoyant sa valeur;
+\item pile\_vide(pile) qui teste si la pile est vide.
+\end{itemize}\medskip
+
+L'implémentation est proche de celle de la liste chainée. Il suffit de la reprendre et de la modifier en respectant l'interface de la pile.
+
+\begin{enumerate}
+\item \textbf{Implémentation} 
+\begin{enumerate}
+\item Créer la classe Pile. Le constructeur de la classe renvoie une pile vide ce qui correspond à la fonction crée\_pile(). L'attribut sera nommé \textbf{sommet}.
+\item Créer les 3 autres méthodes : empile, dépile et pile\_vide.
+\end{enumerate}
+\item \textbf{Application}:
+\begin{enumerate}
+\item Créer une pile p puis empiler plusieurs valeurs. Afficher la pile p.
+\item Créer la fonction carres(), qui prend en paramètre une pile et renvoie une nouvelle pile avec les carrés des nombres de la pile passée en paramètre.
+\item Créer la pile pcarré contenant les carrés des nombres de la pile p. Afficher les piles p et pcarré.
+\end{enumerate}
+\end{enumerate}
+
+\subsection{File}
+On va créer une classe File pour implémenter une file. On rappelle l'interface de la file:
+\begin{itemize}
+\item crée\_file() qui crée une file vide;
+\item enfile(valeur,file) qui ajoute une valeur à la file;
+\item défile(file) qui supprime la tête de la file en renvoyant sa valeur;
+\item file\_vide(pile) qui teste si la file est vide.
+\end{itemize}\medskip
+
+La aussi, l'implémentation est proche de celle de la liste chainée. Il suffit de la reprendre et de la modifier en respectant l'interface de la file.
+
+\begin{enumerate}
+\item \textbf{Implémentation} 
+\begin{enumerate}
+\item Créer la classe File. Le constructeur de la classe renvoie une file vide ce qui correspond à la fonction crée\_file(). L'attribut sera nommé \textbf{queue}.
+\item Créer les 3 autres méthodes : enfile, défile et file\_vide.
+\end{enumerate}
+\item \textbf{Application}:
+\begin{enumerate}
+\item Créer une pile f puis enfiler plusieurs valeurs. Afficher la file f.
+\item Créer la fonction impairs(), qui prend en paramètre une file et renvoie une nouvelle file avec les nombres impairs contenus dans la file passée en paramètre.
+\item Créer la file fimpairs contenant les nombres impairs de la file p. Afficher les files f et fimpairs.
+\end{enumerate}
+\end{enumerate}
+
+
+\subsection{En supplément (difficile)}
+\begin{enumerate}
+\item Ajouter les méthodes \textbf{hauteur} pour la pile et \textbf{longueur} pour la file qui renvoient le nombre d'éléments.
+\item Améliorer l'affichage pour la pile et la file, par exemple pour qu'il ressemble à celui des listes en python.
+\item L'accès aux valeurs d'une pile ou d'une file n'est pas possible sauf pour le sommet et la tête bien entendu. Comment modifier les classes Pile et File pour que les valeurs ne soient pas accessibles.
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,844 @@
+\documentclass[11pt]{article}
+
+    %\usepackage[breakable]{tcolorbox}
+    \usepackage[most]{tcolorbox}
+    \usepackage{lmodern} 
+    \usepackage{parskip} % Stop auto-indenting (to mimic markdown behaviour)
+    
+    \usepackage{iftex}
+    \ifPDFTeX
+    	\usepackage[T1]{fontenc}
+    	\usepackage{mathpazo}
+    \else
+    	\usepackage{fontspec}
+    \fi
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % Maintain compatibility with old templates. Remove in nbconvert 6.0
+    \let\Oldincludegraphics\includegraphics
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionFormat{nocaption}{}
+    \captionsetup{format=nocaption,aboveskip=0pt,belowskip=0pt}
+
+    \usepackage{float}
+    \floatplacement{figure}{H} % forces figures to be placed at the correct location
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range
+    \makeatletter % fix for old versions of grffile with XeLaTeX
+    \@ifpackagelater{grffile}{2019/11/01}
+    {
+      % Do nothing on new versions
+    }
+    {
+      \def\Gread@@xetex#1{%
+        \IfFileExists{"\Gin@base".bb}%
+        {\Gread@eps{\Gin@base.bb}}%
+        {\Gread@@xetex@aux#1}%
+      }
+    }
+    \makeatother
+    \usepackage[Export]{adjustbox} % Used to constrain images to a maximum size
+    \adjustboxset{max size={0.9\linewidth}{0.9\paperheight}}
+
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    % The default LaTeX title has an obnoxious amount of whitespace. By default,
+    % titling removes some of it. It also provides customization options.
+    \usepackage{titling}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    \usepackage{mathrsfs}
+    
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{cclicenses}
+
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+    \definecolor{ansi-default-inverse-fg}{HTML}{FFFFFF}
+    \definecolor{ansi-default-inverse-bg}{HTML}{000000}
+
+    % common color for the border for error outputs.
+    \definecolor{outerrorbackground}{HTML}{FFDFDF}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=0.7in,bmargin=0.7in,lmargin=0.7in,rmargin=0.7in}
+        
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatibility definitions
+    \def\gt{>}
+    \def\lt{<}
+    \let\Oldtex\TeX
+    \let\Oldlatex\LaTeX
+    \renewcommand{\TeX}{\textrm{\Oldtex}}
+    \renewcommand{\LaTeX}{\textrm{\Oldlatex}}
+    % Document parameters
+    % Document title
+    \title{Opérateurs logiques}
+      \date{Octobre 2021}  
+	%\author{Yannick Chistel}
+    
+\makeatletter         
+\renewcommand\maketitle[1]{
+\hrule\medskip
+{\raggedright % Note the extra {
+\begin{center}
+{\Huge \bfseries \sffamily #1 }\\[4ex] 
+%{\Large  \@author}\\[2ex] 
+%\@date\\[4ex]
+\hrule \bigskip
+\end{center}}} % Note the extra }
+\makeatother    
+
+
+
+\pagestyle{fancy}
+\fancyhead{}
+\renewcommand\headrulewidth{0pt}
+\renewcommand\footrulewidth{1pt}
+\fancyfoot[L]{YC}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{\cc-\ccby-\ccnc}
+
+% 
+%\newtcolorbox{exemple}[2][]{
+%    enhanced,
+%    size=fbox,sharp corners,
+%    colback=white,colframe=black,
+%    colbacktitle=black,fonttitle=\bfseries,
+%    attach boxed title to top left={yshift=-3mm,yshifttext=-3mm},
+%    boxed title style={size=small,left=0pt,right=0pt,sharp corners},title=#2,#1}
+
+\newtcolorbox{remarque}[2][]{colback=red!4!white,
+colframe=red!64!black,fonttitle=\bfseries,
+colbacktitle=red!64!black,enhanced,
+attach boxed title to top left={xshift=4mm,yshift=-2mm},
+title=#2,#1}  
+
+
+\newtcolorbox{exemple}[2][]{colback=blue!4!white,
+colframe=blue!64!green,fonttitle=\bfseries,
+colbacktitle=blue!64!green,enhanced,
+attach boxed title to top left={xshift=4mm,yshift=-2mm},
+title=#2,#1}  
+    
+% Pygments definitions
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\@namedef{PY@tok@w}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\@namedef{PY@tok@c}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\@namedef{PY@tok@cp}{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\@namedef{PY@tok@k}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kp}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kt}{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\@namedef{PY@tok@o}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@ow}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\@namedef{PY@tok@nb}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@nf}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@nc}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@nn}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@ne}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\@namedef{PY@tok@nv}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@no}{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\@namedef{PY@tok@nl}{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\@namedef{PY@tok@ni}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\@namedef{PY@tok@na}{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\@namedef{PY@tok@nt}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@nd}{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\@namedef{PY@tok@s}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sd}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@si}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\@namedef{PY@tok@se}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\@namedef{PY@tok@sr}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\@namedef{PY@tok@ss}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@sx}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@m}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@gh}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\@namedef{PY@tok@gu}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\@namedef{PY@tok@gd}{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\@namedef{PY@tok@gi}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\@namedef{PY@tok@gr}{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\@namedef{PY@tok@ge}{\let\PY@it=\textit}
+\@namedef{PY@tok@gs}{\let\PY@bf=\textbf}
+\@namedef{PY@tok@gp}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\@namedef{PY@tok@go}{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\@namedef{PY@tok@gt}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\@namedef{PY@tok@err}{\def\PY@bc##1{{\setlength{\fboxsep}{\string -\fboxrule}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}}
+\@namedef{PY@tok@kc}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kd}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kn}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kr}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@bp}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@fm}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@vc}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@vg}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@vi}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@vm}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@sa}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sb}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sc}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@dl}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@s2}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sh}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@s1}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@mb}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mf}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mh}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mi}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@il}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mo}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@ch}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\@namedef{PY@tok@cm}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\@namedef{PY@tok@cpf}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\@namedef{PY@tok@c1}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\@namedef{PY@tok@cs}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % For linebreaks inside Verbatim environment from package fancyvrb. 
+    \makeatletter
+        \newbox\Wrappedcontinuationbox 
+        \newbox\Wrappedvisiblespacebox 
+        \newcommand*\Wrappedvisiblespace {\textcolor{red}{\textvisiblespace}} 
+        \newcommand*\Wrappedcontinuationsymbol {\textcolor{red}{\llap{\tiny$\m@th\hookrightarrow$}}} 
+        \newcommand*\Wrappedcontinuationindent {3ex } 
+        \newcommand*\Wrappedafterbreak {\kern\Wrappedcontinuationindent\copy\Wrappedcontinuationbox} 
+        % Take advantage of the already applied Pygments mark-up to insert 
+        % potential linebreaks for TeX processing. 
+        %        {, <, #, %, $, ' and ": go to next line. 
+        %        _, }, ^, &, >, - and ~: stay at end of broken line. 
+        % Use of \textquotesingle for straight quote. 
+        \newcommand*\Wrappedbreaksatspecials {% 
+            \def\PYGZus{\discretionary{\char`\_}{\Wrappedafterbreak}{\char`\_}}% 
+            \def\PYGZob{\discretionary{}{\Wrappedafterbreak\char`\{}{\char`\{}}% 
+            \def\PYGZcb{\discretionary{\char`\}}{\Wrappedafterbreak}{\char`\}}}% 
+            \def\PYGZca{\discretionary{\char`\^}{\Wrappedafterbreak}{\char`\^}}% 
+            \def\PYGZam{\discretionary{\char`\&}{\Wrappedafterbreak}{\char`\&}}% 
+            \def\PYGZlt{\discretionary{}{\Wrappedafterbreak\char`\<}{\char`\<}}% 
+            \def\PYGZgt{\discretionary{\char`\>}{\Wrappedafterbreak}{\char`\>}}% 
+            \def\PYGZsh{\discretionary{}{\Wrappedafterbreak\char`\#}{\char`\#}}% 
+            \def\PYGZpc{\discretionary{}{\Wrappedafterbreak\char`\%}{\char`\%}}% 
+            \def\PYGZdl{\discretionary{}{\Wrappedafterbreak\char`\$}{\char`\$}}% 
+            \def\PYGZhy{\discretionary{\char`\-}{\Wrappedafterbreak}{\char`\-}}% 
+            \def\PYGZsq{\discretionary{}{\Wrappedafterbreak\textquotesingle}{\textquotesingle}}% 
+            \def\PYGZdq{\discretionary{}{\Wrappedafterbreak\char`\"}{\char`\"}}% 
+            \def\PYGZti{\discretionary{\char`\~}{\Wrappedafterbreak}{\char`\~}}% 
+        } 
+        % Some characters . , ; ? ! / are not pygmentized. 
+        % This macro makes them "active" and they will insert potential linebreaks 
+        \newcommand*\Wrappedbreaksatpunct {% 
+            \lccode`\~`\.\lowercase{\def~}{\discretionary{\hbox{\char`\.}}{\Wrappedafterbreak}{\hbox{\char`\.}}}% 
+            \lccode`\~`\,\lowercase{\def~}{\discretionary{\hbox{\char`\,}}{\Wrappedafterbreak}{\hbox{\char`\,}}}% 
+            \lccode`\~`\;\lowercase{\def~}{\discretionary{\hbox{\char`\;}}{\Wrappedafterbreak}{\hbox{\char`\;}}}% 
+            \lccode`\~`\:\lowercase{\def~}{\discretionary{\hbox{\char`\:}}{\Wrappedafterbreak}{\hbox{\char`\:}}}% 
+            \lccode`\~`\?\lowercase{\def~}{\discretionary{\hbox{\char`\?}}{\Wrappedafterbreak}{\hbox{\char`\?}}}% 
+            \lccode`\~`\!\lowercase{\def~}{\discretionary{\hbox{\char`\!}}{\Wrappedafterbreak}{\hbox{\char`\!}}}% 
+            \lccode`\~`\/\lowercase{\def~}{\discretionary{\hbox{\char`\/}}{\Wrappedafterbreak}{\hbox{\char`\/}}}% 
+            \catcode`\.\active
+            \catcode`\,\active 
+            \catcode`\;\active
+            \catcode`\:\active
+            \catcode`\?\active
+            \catcode`\!\active
+            \catcode`\/\active 
+            \lccode`\~`\~ 	
+        }
+    \makeatother
+
+    \let\OriginalVerbatim=\Verbatim
+    \makeatletter
+    \renewcommand{\Verbatim}[1][1]{%
+        %\parskip\z@skip
+        \sbox\Wrappedcontinuationbox {\Wrappedcontinuationsymbol}%
+        \sbox\Wrappedvisiblespacebox {\FV@SetupFont\Wrappedvisiblespace}%
+        \def\FancyVerbFormatLine ##1{\hsize\linewidth
+            \vtop{\raggedright\hyphenpenalty\z@\exhyphenpenalty\z@
+                \doublehyphendemerits\z@\finalhyphendemerits\z@
+                \strut ##1\strut}%
+        }%
+        % If the linebreak is at a space, the latter will be displayed as visible
+        % space at end of first line, and a continuation symbol starts next line.
+        % Stretch/shrink are however usually zero for typewriter font.
+        \def\FV@Space {%
+            \nobreak\hskip\z@ plus\fontdimen3\font minus\fontdimen4\font
+            \discretionary{\copy\Wrappedvisiblespacebox}{\Wrappedafterbreak}
+            {\kern\fontdimen2\font}%
+        }%
+        
+        % Allow breaks at special characters using \PYG... macros.
+        \Wrappedbreaksatspecials
+        % Breaks at punctuation characters . , ; ? ! and / need catcode=\active 	
+        \OriginalVerbatim[#1,codes*=\Wrappedbreaksatpunct]%
+    }
+    \makeatother
+
+    % Exact colors from NB
+    \definecolor{incolor}{HTML}{303F9F}
+    \definecolor{outcolor}{HTML}{D84315}
+    \definecolor{cellborder}{HTML}{CFCFCF}
+    \definecolor{cellbackground}{HTML}{F7F7F7}
+    
+    % prompt
+    \makeatletter
+    \newcommand{\boxspacing}{\kern\kvtcb@left@rule\kern\kvtcb@boxsep}
+    \makeatother
+    \newcommand{\prompt}[4]{
+        {\ttfamily\llap{{\color{#2}[#3]:\hspace{3pt}#4}}\vspace{-\baselineskip}}
+    }
+    
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+
+    
+
+
+\begin{document}
+    
+    \maketitle{Programmation orientée objet (POO)}
+    
+
+
+    
+%    \hypertarget{programmation-orientuxe9e-objet-poo}{%
+%\section{Programmation orientée objet
+%(POO)}\label{programmation-orientuxe9e-objet-poo}}
+
+    \hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+Le paradigme de \textbf{programmation orientée objet} s'appuie sur les
+notions suivantes :
+
+\begin{itemize}
+\tightlist
+\item
+  Un \textbf{objet} est un modèle, un moule qui va permettre de créer
+  des représentations de cet objet. Chaque représentation est une
+  \textbf{instance};
+\item
+  Chaque instance d'objet a des valeurs définies à la construction de
+  l'objet. Ces valeurs sont les \textbf{attributs} de l'objet;
+\item
+  Un objet possède différentes fonctionnalités. Toutes les instances
+  bénéficieront de ces fonctions. On les appelle des \textbf{méthodes}.
+\end{itemize}
+
+    \hypertarget{objet-en-python}{%
+\subsection{Objet en Python}\label{objet-en-python}}
+
+En python, un objet est défini par le mot clef \textbf{class} suivi du
+nom de l'objet et des 2 points.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{ objet:}
+    \CommentTok{\# attributs et méthodes de l\textquotesingle{}objet}
+\end{Highlighting}
+\end{Shaded}
+
+Une \textbf{classe} est une structure de donnée qui permet de créer des
+objets.\\
+Une \textbf{classe} permet de définir les attributs d'un objet et les
+méthodes qui lui sont propres. Tout ce qui est défini dans la classe
+doit être \textbf{indenté}.
+
+La création d'un objet se fera par une affectation avec la classe
+définissant l'objet. On dit qu'on \textbf{instancie} un objet.
+
+    \hypertarget{exemple}{%
+\subsubsection*{Exemple}\label{exemple}}
+
+Imaginons que l'on souhaite créer un objet en python représentant une
+voiture. On peut définir les attributs et les méthodes de notre objet
+comme suit:
+
+\begin{itemize}
+\tightlist
+\item
+  Les attributs sont des caractéristiques ou des propriétés de la
+  voiture: le nombre de roues, la marque, le modèle, le nombre de
+  portes, la couleur, etc.
+\item
+  les méthodes représentent des fonctionnalités ou des actions: avancer,
+  accélérer, démarrer, ralentir, etc.
+\end{itemize}
+
+Pour créer nos objets voitures, on définit la classe automobile:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{ automobile:}
+    \ControlFlowTok{pass} \CommentTok{\# instruction qui ne fait rien mais évite une erreur dans l\textquotesingle{}interpréteur}
+\end{Highlighting}
+\end{Shaded}
+
+Dans l'interpréteur ou le notebook, on peut créer différentes voitures:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{clio}\OperatorTok{=}\NormalTok{automobile()}
+\NormalTok{polo}\OperatorTok{=}\NormalTok{automobile()}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{remarque}{%
+\subsubsection*{Remarque}\label{remarque}}
+
+Nous avons deux instances d'objets construites avec la classe automobile
+: \textbf{polo} et \textbf{clio}.\\
+On fera souvent le raccourci que \textbf{clio} et \textbf{polo} sont
+deux objets de la classe automobile.
+
+    \hypertarget{attributs-et-muxe9thodes-dun-objet}{%
+\section{Attributs et méthodes d'un
+objet}\label{attributs-et-muxe9thodes-dun-objet}}
+
+Nous avons créé deux objets mais ils n'ont ni attributs ni méthodes
+(puisque la classe est vide). On peut ajouter des attributs et des
+méthodes à un objet dans l'interpréteur (mais ce n'est pas la bonne
+méthode).
+
+Comme pour tout objet, l'accès aux attributs et aux méthodes se fait
+avec la syntaxe suivante:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{objet.attribut }\CommentTok{\# appel d\textquotesingle{}un attribut de l\textquotesingle{}objet}
+\NormalTok{objet.méthode() }\CommentTok{\# appel d\textquotesingle{}une méthode de l\textquotesingle{}objet, les parenthèses rappellent que c\textquotesingle{}est une fonction.}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{les-attributs-dun-objet}{%
+\subsection{Les attributs d'un objet}\label{les-attributs-dun-objet}}
+
+Les attributs d'un objet permettent de stocker des valeurs pour notre
+objet. Ces attributs sont accessibles et peuvent être modifiés. Dans
+certains langages, l'accès aux attributs est protégé et nécessite des
+fonctions pour accéder et modifier l'attribut. En python, l'accès est
+libre par défaut mais on peut le protéger avec une fonction.
+
+Reprenons notre exemple de voiture. On peut définir comme attribut le
+nombre de roues et le nombre de portes.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# la clio a 4 roues et trois portes}
+\NormalTok{clio.roues }\OperatorTok{=} \DecValTok{4}
+\NormalTok{clio.portes }\OperatorTok{=} \DecValTok{3}
+
+\CommentTok{\# la polo a 4 roues et 5 portes}
+\NormalTok{polo.roues }\OperatorTok{=} \DecValTok{4}
+\NormalTok{polo.portes }\OperatorTok{=} \DecValTok{5}
+\NormalTok{polo.carburant }\OperatorTok{=}\NormalTok{ diesel}
+\end{Highlighting}
+\end{Shaded}
+
+On a défini deux attributs communs pour chaque objet. Il est possible de
+définir un attribut pour un objet et pas pour l'autre. Bien que ce soit
+possible, il vaut mieux éviter de le faire et plutôt créer des objets
+uniformes avec les mêmes attributs pour éviter des erreurs.
+
+\hypertarget{les-muxe9thodes-dun-objet}{%
+\subsection{Les méthodes d'un objet}\label{les-muxe9thodes-dun-objet}}
+
+Les méthodes sont des fonctions propres aux objets, ce qui implique que
+la fonction ne peut être appliquée qu'à l'objet. Comme l'attribut, la
+méthode est placée après le nom de l'objet séparée par un point :
+\texttt{objet.méthode()}.
+
+Une \textbf{méthode} renvoie:
+
+\begin{itemize}
+\tightlist
+\item
+  une valeur dont le type est un nombre (int, float), un bouléen (bool),
+  une chaine de caractère (str) ou un type construit comme la liste
+  (list) ou le dictionnaire (dict);
+\item
+  un autre objet (class);
+\item
+  rien ou None tout en agissant sur un attribut : modifier, créer;
+\item
+  un affichage.
+\end{itemize}
+
+En python, une méthode d'objet est définie dans la classe. Pour faire
+référence à l'objet, nous devons utiliser le mot clef \textbf{self} qui
+désignera l'objet. Ce mot clef \textbf{self} sera passé en paramètre et
+précisé à chaque fois que l'objet sera référencé.
+
+Reprenons l'exemple de l'objet automobile et créons une méthode pour
+savoir si la voiture avance.
+
+\hypertarget{exemple}{%
+\subsubsection*{Exemple}\label{exemple}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{ automobile:}
+    \CommentTok{\# attributs}
+\NormalTok{    roues}\OperatorTok{=}\DecValTok{4}
+\NormalTok{    portes}\OperatorTok{=}\DecValTok{3}
+\NormalTok{    vitesse}\OperatorTok{=}\DecValTok{0}
+    
+    \CommentTok{\# méthode}
+    \KeywordTok{def}\NormalTok{ avancer(}\VariableTok{self}\NormalTok{):}
+        \ControlFlowTok{if} \VariableTok{self}\NormalTok{.vitesse }\OperatorTok{\textgreater{}} \DecValTok{0}\NormalTok{:}
+            \ControlFlowTok{return} \VariableTok{True}
+        \ControlFlowTok{else}\NormalTok{:}
+            \ControlFlowTok{return} \VariableTok{False}
+
+\CommentTok{\# premier objet : polo}
+\NormalTok{polo}\OperatorTok{=}\NormalTok{automobile()}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"la polo a }\SpecialCharTok{\%s}\StringTok{ portes"} \OperatorTok{\%}\NormalTok{ polo.portes)}
+
+\ControlFlowTok{if}\NormalTok{ polo.avancer():}
+    \BuiltInTok{print}\NormalTok{(}\StringTok{"La polo avance."}\NormalTok{)}
+\ControlFlowTok{else}\NormalTok{:}
+    \BuiltInTok{print}\NormalTok{(}\StringTok{"La polo est à l\textquotesingle{}arrêt"}\NormalTok{)}
+
+\CommentTok{\# second objet : clio}
+\NormalTok{clio}\OperatorTok{=}\NormalTok{automobile()}
+\CommentTok{\# on modifie la vitesse de la clio}
+\NormalTok{clio.vitesse}\OperatorTok{=}\DecValTok{50}
+
+\ControlFlowTok{if}\NormalTok{ clio.avancer():}
+    \BuiltInTok{print}\NormalTok{(}\StringTok{"La clio avance."}\NormalTok{)}
+\ControlFlowTok{else}\NormalTok{:}
+    \BuiltInTok{print}\NormalTok{(}\StringTok{"La clio est à l\textquotesingle{}arrêt"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Si on exécute ce programme, on obtient les affichages:
+
+\begin{verbatim}
+la polo a 3 portes.
+la polo est à l'arrêt.
+la clio avance.
+\end{verbatim}
+
+\hypertarget{remarque}{%
+\subsubsection*{Remarque}\label{remarque}}
+
+Ainsi définie, la classe impose un nombre de portes égal à 3 quel que
+soit l'objet créé. Donc la polo et la clio ont trois portes. Dans ce cas
+on parle \textbf{d'attribut de classe}.
+
+Il est possible de modifier la valeur par une affectation :
+\texttt{clio.portes\ =\ 5} après la création de l'objet mais cela n'est
+pas très optimisé !
+
+%    \hypertarget{exercice}{%
+%\subsubsection*{Exercice}\label{exercice}}
+
+\begin{exemple}{Exercice}
+Créer une cellule de code Python et copier coller le code de l'exemple précédent sur la classe automobile.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Modifier ce programme pour créer un nouvel objet représentant une
+  voiture du modèle \emph{mini} avec 3 portes.
+\item
+  La polo a 5 portes et 5 roues (roue de secours). Modifier le programme
+  en conséquence.
+\item
+  La mini roule à 70 km/h. Modifier le code.
+\item
+  Modifier l'affichage pour chaque véhicule en donnant le nombre de
+  roues, le nombre de portes et son statut (arrêt ou mobile) en
+  indiquant sa vitesse.
+\end{enumerate}
+
+\textbf{En Plus:} \emph{est-il possible d'optimiser le code pour éviter
+la répétition des instructions ?}
+\end{exemple}
+
+
+
+\begin{exemple}{Exercice}
+%    \hypertarget{exercice}{%
+%\subsubsection*{Exercice}\label{exercice}}
+
+On reprend le code précédent que l'on continue de modifier.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Ajouter à la classe un nouvel attribut indiquant le nombre de places
+  disponibles. La valeur par défaut sera égale à 4.
+\item
+  Ajouter la méthode accelerer à la classe. Cette méthode augmente la
+  vitesse de l'objet. À chaque appel de la méthode, la vitesse augmente
+  de 10.
+\item
+  La polo, initialement à l'arrêt, roule maintenant à 90 km/h. Écrire un
+  code qui modifie la vitesse de la polo en utilisant la méthode
+  accelerer.
+\item
+  Écrire une méthode ralentir qui diminue la vitesse par palier de 10.
+\item
+  Écrire une méthode arreter qui modifie la vitesse du véhicule à 0.
+\end{enumerate}
+
+\textbf{En Plus:} \emph{est-il possible d'utiliser un paramètre à la
+méthode accelerer pour indiquer la valeur à ajouter à la vitesse ? De
+même avec la méthode ralentir.}
+\end{exemple}
+
+
+
+
+
+    \hypertarget{le-constructeur-muxe9thode-pour-duxe9finir-les-attributs}{%
+\section{Le constructeur : méthode pour définir les
+attributs}\label{le-constructeur-muxe9thode-pour-duxe9finir-les-attributs}}
+
+En python, il existe une méthode \textbf{\_\_init\_\_} qui permet de
+définir les attributs à la création de l'objet. Cette méthode est un
+\textbf{constructeur} d'objet qui initialise les attributs.
+
+Comme toute méthode, elle aura un paramètre \textbf{self} et chaque
+attribut sera préfixé par le mot \textbf{self}.
+
+\hypertarget{exemple}{%
+\subsubsection*{Exemple}\label{exemple}}
+
+On initialise les attributs de la classe automobile avec ce constructeur
+\textbf{\_\_init\_\_} :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{ automobile:}
+    
+    \CommentTok{\# constructeur de l\textquotesingle{}objet}
+    \KeywordTok{def} \FunctionTok{\_\_init\_\_}\NormalTok{(}\VariableTok{self}\NormalTok{):}
+        \VariableTok{self}\NormalTok{.roues}\OperatorTok{=}\DecValTok{4}
+        \VariableTok{self}\NormalTok{.portes}\OperatorTok{=}\DecValTok{3}
+        \VariableTok{self}\NormalTok{.vitesse}\OperatorTok{=}\DecValTok{0}
+    
+    \CommentTok{\# les autres méthode de l\textquotesingle{}objet}
+    \KeywordTok{def}\NormalTok{ avancer(}\VariableTok{self}\NormalTok{):}
+        \ControlFlowTok{if} \VariableTok{self}\NormalTok{.vitesse }\OperatorTok{\textgreater{}} \DecValTok{0}\NormalTok{:}
+            \ControlFlowTok{return} \VariableTok{True}
+        \ControlFlowTok{else}\NormalTok{:}
+            \ControlFlowTok{return} \VariableTok{False}
+
+\CommentTok{\# premier objet : polo}
+\NormalTok{polo}\OperatorTok{=}\NormalTok{automobile()}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"la polo a }\SpecialCharTok{\%s}\StringTok{ roues et }\SpecialCharTok{\%s}\StringTok{ portes."} \OperatorTok{\%}\NormalTok{ (polo.roues,polo.portes))}
+\end{Highlighting}
+\end{Shaded}
+
+Le reste du code ne change pas ! Quel est alors le véritable intérêt ?
+
+Les fonctions acceptent des \textbf{paramètres}. Cela permet donc de
+passer, au moment de l'appel, des valeurs en argument pour modifier les
+attributs de chaque objet.
+
+\hypertarget{exemple-1}{%
+\subsubsection*{Exemple}\label{exemple-1}}
+
+En définissant des paramètres pour les différents attributs, on peut
+créer des objets avec des valeurs particulières passées comme arguments:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{ automobile:}
+    
+    \CommentTok{\# constructeur de l\textquotesingle{}objet}
+    \KeywordTok{def} \FunctionTok{\_\_init\_\_}\NormalTok{(}\VariableTok{self}\NormalTok{,r,p,v}\OperatorTok{=}\DecValTok{0}\NormalTok{):}
+        \VariableTok{self}\NormalTok{.roues }\OperatorTok{=}\NormalTok{ r }\CommentTok{\# r est le nombre de roues}
+        \VariableTok{self}\NormalTok{.portes }\OperatorTok{=}\NormalTok{ p }\CommentTok{\# p est le nombre de portes}
+        \VariableTok{self}\NormalTok{.vitesse }\OperatorTok{=}\NormalTok{ v }\CommentTok{\# v est la vitesse initiale par défaut égale à 0}
+    
+    \CommentTok{\# méthode de l\textquotesingle{}objet}
+    \KeywordTok{def}\NormalTok{ avancer(}\VariableTok{self}\NormalTok{):}
+        \ControlFlowTok{if} \VariableTok{self}\NormalTok{.vitesse }\OperatorTok{\textgreater{}} \DecValTok{0}\NormalTok{:}
+            \ControlFlowTok{return} \VariableTok{True}
+        \ControlFlowTok{else}\NormalTok{:}
+            \ControlFlowTok{return} \VariableTok{False}
+
+\CommentTok{\# premier objet : polo}
+\NormalTok{polo}\OperatorTok{=}\NormalTok{automobile(}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{)}
+
+\BuiltInTok{print}\NormalTok{(}\StringTok{"La polo a }\SpecialCharTok{\%s}\StringTok{ roues et }\SpecialCharTok{\%s}\StringTok{ portes"} \OperatorTok{\%}\NormalTok{ (polo.roues,polo.portes))}
+\ControlFlowTok{if}\NormalTok{ polo.avancer():}
+    \BuiltInTok{print}\NormalTok{(}\StringTok{"La polo avance à }\SpecialCharTok{\%s}\StringTok{ km/h."} \OperatorTok{\%}\NormalTok{ polo.vitesse)}
+\ControlFlowTok{else}\NormalTok{:}
+    \BuiltInTok{print}\NormalTok{(}\StringTok{"La polo est à l\textquotesingle{}arrêt."}\NormalTok{)}
+
+
+\CommentTok{\# second objet : clio}
+\NormalTok{clio}\OperatorTok{=}\NormalTok{automobile(}\DecValTok{4}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{40}\NormalTok{)}
+
+\BuiltInTok{print}\NormalTok{(}\StringTok{"La clio a }\SpecialCharTok{\%s}\StringTok{ roues et }\SpecialCharTok{\%s}\StringTok{ portes"} \OperatorTok{\%}\NormalTok{ (clio.roues,clio.portes))}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"la clio a }\SpecialCharTok{\%s}\StringTok{ portes"} \OperatorTok{\%}\NormalTok{ clio.portes)}
+\ControlFlowTok{if}\NormalTok{ clio.avancer():}
+    \BuiltInTok{print}\NormalTok{(}\StringTok{"La clio avance à }\SpecialCharTok{\%s}\StringTok{ km/h."} \OperatorTok{\%}\NormalTok{ clio.vitesse)}
+\ControlFlowTok{else}\NormalTok{:}
+    \BuiltInTok{print}\NormalTok{(}\StringTok{"La clio est à l\textquotesingle{}arrêt."}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+%\hypertarget{exercice}{%
+%\subsubsection*{Exercice}\label{exercice}}
+
+
+\begin{exemple}{Exercice}
+On reprend le code de l'exercice précédent.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Ajouter le constructeur à votre classe automobile (attention au nombre
+  d'attributs).
+\item
+  Créer avec ce constructeur les trois automobiles \emph{polo},
+  \emph{clio} et \emph{mini}.
+\item
+  Afficher les attributs de chaque voiture.
+\item
+  Ajouter les attributs nom et couleur à la classe automobile.
+\item
+  Recréez vos trois voitures de couleurs différentes en utilisant comme
+  nom de variable \emph{a1}, \emph{a2} et \emph{a3}
+\end{enumerate}
+
+\textbf{En Plus:} \emph{est-il possible d'optimiser le code pour
+l'affichage ?}
+\end{exemple}
+    
+    
+    
+\end{document}
