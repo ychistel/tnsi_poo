@@ -13,8 +13,8 @@ Certains langages comme JAVA sont des langages uniquement basé sur les objets. 
    :hidden: 
    :caption: POO
 
-   content/activite.rst
-   content/cours.rst
-   content/exercice_0.rst
-   content/exercice_1.rst
+   poo/content/activite.rst
+   poo/content/cours.rst
+   poo/content/exercice_0.rst
+   poo/content/exercice_1.rst
 
